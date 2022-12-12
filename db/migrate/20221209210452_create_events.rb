@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration[7.0]
       t.integer :duration
       t.integer :price
       t.string :location
+      t.belongs_to :user
 
       t.timestamps
     end
