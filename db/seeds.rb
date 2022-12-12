@@ -26,7 +26,7 @@ end
 
 50.times do
   Event.create(
-    title: Faker::Lorem.words(length: 3),
+    title: Faker::Lorem.words(number: 3),
     description: Faker::Lorem.paragraph,
     start_date: Faker::Time.forward,
     duration: Faker::Number.within(range: 20..300),
