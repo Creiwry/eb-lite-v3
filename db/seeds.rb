@@ -19,7 +19,7 @@ Participation.destroy_all
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email(domain: 'yopmail.com'),
-    encrypted_password: Faker::Lorem.unique,
+    encrypted_password: Faker::Lorem.characters,
     description: Faker::Lorem.paragraph
   )
 end
@@ -32,7 +32,7 @@ end
     duration: Faker::Number.within(range: 20..300),
     price: Faker::Number.within(range: 1..1000),
     location: Faker::Address.city,
-    user: User.all.sample
+    organiser: User.all.sample
   )
 end
 
