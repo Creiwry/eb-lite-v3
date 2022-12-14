@@ -40,6 +40,6 @@ end
   Participation.create(
     event: Event.all.sample,
     participant: User.all.sample,
-    stripe_customer_id: Faker::Lorem.unique
+    stripe_customer_id: Faker::Lorem.characters
   )
 end
