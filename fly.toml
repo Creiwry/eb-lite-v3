@@ -1,6 +1,6 @@
-# fly.toml file generated for eb-lite-v3 on 2022-12-09T22:27:08+01:00
+# fly.toml file generated for eb-lite-v1 on 2022-12-14T20:52:01+01:00
 
-app = "eb-lite-v3"
+app = "eb-lite-v1"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
