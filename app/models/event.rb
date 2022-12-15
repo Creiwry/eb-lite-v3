@@ -1,14 +1,3 @@
-# loader.ignore('./validators/divisible_by_five_validator')
-# require_relative './validators/divisible_by_five_validator'
-
-
-# class DivisibleByFiveValidator < ActiveModel::Validator
-#   def validate(record)
-#     return if (record.duration % 5).zero?
-
-#     record.errors[:base] << 'has to be divisible by 5'
-#   end
-# end
 
 class Event < ApplicationRecord
   validates :start_date, presence: true, comparison: { greater_than_or_equal_to: Time.now }
