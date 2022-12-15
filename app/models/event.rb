@@ -1,4 +1,4 @@
-require_relative 'app/models/validators'
+require_relative './validators/divisible_by_five_validator'
 
 class Event < ApplicationRecord
   validates :start_date, presence: true, comparison: { greater_than_or_equal_to: Time.now }
