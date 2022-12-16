@@ -78,5 +78,6 @@ group :test do
 end
 
 group :test, :development do
+  gem 'letter_opener'
   gem 'rspec-rails'
 end
