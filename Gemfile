@@ -83,3 +83,5 @@ group :test, :development do
   gem 'letter_opener'
   gem 'rspec-rails'
 end
+
+gem "devise", "~> 4.8"
