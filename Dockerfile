@@ -21,6 +21,10 @@ ARG RUBY_VERSION=3.1.2
 ARG VARIANT=jemalloc-slim
 FROM quay.io/evl.ms/fullstaq-ruby:${RUBY_VERSION}-${VARIANT} as base
 
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg -o /root/yarn-pubkey.gpg && apt-key add /root/yarn-pubkey.gpg
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && apt-get install -y --no-install-recommends nodejs yarn
+
 LABEL fly_launch_runtime="rails"
 
 ARG BUNDLER_VERSION=2.3.23
@@ -39,6 +43,7 @@ ENV BUNDLE_WITHOUT ${BUNDLE_WITHOUT}
 RUN mkdir /app
 WORKDIR /app
 RUN mkdir -p tmp/pids
+
 
 RUN gem update --system --no-document && \
     gem install -N bundler -v ${BUNDLER_VERSION}
